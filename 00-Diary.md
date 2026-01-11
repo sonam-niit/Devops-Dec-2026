@@ -18,3 +18,19 @@
     - WSL Setup (Linux Setup for next class)
 3. Session-3:
     - Linux Fundamentals
+    - Linux Terminal
+    - setup linux in windows using wsl
+    - ls, mkdir, cd, rm 
+    - User creation- adduser, usermod
+
+4. Session-4:
+    - advanced Linux
+    - package manage: APT, install, update, upgrade, remove, purge
+    - Cron Jobs
+    - umask- calculating permissions
+    - file directory permission using chmod, chown
+    - fg and bg process
+
+5. Session-5:
+    - Monitoring
+    - top, htop 
