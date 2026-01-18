@@ -61,3 +61,59 @@ scrape_configs:
 
 - process_cpu_seconds_total
 - process_virtual_memory_bytes
+
+## Setting up a Node Exporter to connect data in Prometheus
+
+[Reference Link](https://prometheus.io/docs/guides/node-exporter/)
+
+- keep above wsl running as it is and open another wsl
+- in new wsl run below command to download and start node-exporter
+
+```bash
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+tar xvfz node_exporter-1.10.2.linux-amd64.tar.gz
+cd node_exporter-1.10.2.linux-amd64
+./node_exporter
+
+# if its started check in browser localhost:9100/metrics
+```
+
+- now go to old wsl do ctrl+c to terminate prometheus
+- edit prometheus.yml to add node exporter target
+
+```bash
+nano prometheus.yml
+```
+- add below code
+```bash
+# my global config
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+
+  - job_name: "prometheus"
+
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          app: "prometheus"
+
+
+  - job_name: node
+    static_configs:
+      - targets: ['localhost:9100']
+```
+- save it
+- again start prometheus
+
+```bash
+./prometheus
+```
+
+- check targets localhost:9090/targets
+
+![Targets](images/targets.png)
+
+*If your port 9090 busy start on diffrent port ./prometheus --web.listen-address=":9091"*
+
