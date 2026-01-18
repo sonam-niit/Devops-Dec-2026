@@ -23,7 +23,7 @@ echo 10 | sudo tee /proc/sys/vm/swappiness
  cat /proc/sys/vm/swappiness # check Swappiness
 
  # When you reboot the system this will reset, its temp change
- 
+
 ```
 
 ## What is swappiness?
@@ -35,3 +35,7 @@ echo 10 | sudo tee /proc/sys/vm/swappiness
 - 10 - very low swapping (suggested for servers)
 - 60 - default on most of distributions
 - 100 - aggressive swapping
+
+- check targets localhost:9090/targets
+
+![Targets](images/targets.png)
