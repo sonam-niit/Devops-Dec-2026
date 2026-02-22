@@ -1,0 +1,15 @@
+2026-02-22 05:01:26,290 - DEBUG - Water Temp check
+2026-02-22 05:01:26,290 - INFO - Brewing Started
+2026-02-22 05:01:26,290 - WARNING - Water level is low
+2026-02-22 05:01:26,290 - ERROR - No Water Found
+2026-02-22 05:01:26,290 - CRITICAL - Machine Shutting Down
+2026-02-22 05:21:46,332 - DEBUG - Water Temp check
+2026-02-22 05:21:46,332 - INFO - Brewing Started
+2026-02-22 05:21:46,332 - WARNING - Water level is low
+2026-02-22 05:21:46,332 - ERROR - No Water Found
+2026-02-22 05:21:46,333 - CRITICAL - Machine Shutting Down
+2026-02-22 05:21:47,277 - DEBUG - Water Temp check
+2026-02-22 05:21:47,277 - INFO - Brewing Started
+2026-02-22 05:21:47,277 - WARNING - Water level is low
+2026-02-22 05:21:47,278 - ERROR - No Water Found
+2026-02-22 05:21:47,278 - CRITICAL - Machine Shutting Down
