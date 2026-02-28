@@ -121,6 +121,11 @@ def test_add():
 def test_sub():
     assert sub(4,3)==1
 ```
+- Create requirement.txt for installing dependencies
+
+```txt
+pytest
+```
 
 - for workflow under the workflows folder create one yml file ci.yml
 ```yml
@@ -160,3 +165,4 @@ jobs:
 
 - you can see test cases executed via pipeline
 
+![Python CI](images/python-ci.png)
