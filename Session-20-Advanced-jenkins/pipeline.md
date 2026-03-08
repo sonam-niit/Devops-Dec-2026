@@ -95,3 +95,29 @@ pipeline {
 }
 
 ```
+
+- Archive Artifacts add below stage in above pipeline
+
+```grrovy
+stage('Archive Artifacts') {
+            steps {
+                echo 'Publish Artifacts'
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+```
+
+- click on Build now
+
+![Artifact Output](images/artifacts.png)
+
+### Email Configuration
+
+- manage jenkins -> system -> Email notification
+
+![SMTP Config](images/smtp.png)
+
+![Config 2](images/test-connection.png)
+
+- If you are able to receive email
+- save your configurations
