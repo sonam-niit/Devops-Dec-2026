@@ -82,3 +82,8 @@ def test_div_zero():
 - you can see folder html-cov
 - open from you files and try to open index.html in browser 
 - you can see generated report
+
+## For CI CD pipeline
+
+- pytest --cov=calculator --cov-fail-under=80
+- coverage < 80% -> build fails.
