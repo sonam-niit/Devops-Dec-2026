@@ -2,7 +2,7 @@
 
 - we can create simple selenium-test.py file which is just loading Google Chrome and test the website automatically.
 - noramally selenium trying to test website from browsers but WSL doesn't allow this (GUI APP)
-- so for managing that using webdriver-manager
+- so for managing that using webdriver of selenium with headless
 - to run application in headless mode without opening chrome it will check the web application and execute test cases.
 
 [WebDriver Manager](https://pypi.org/project/webdriver-manager/)
