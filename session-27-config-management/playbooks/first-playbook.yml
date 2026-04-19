@@ -1,0 +1,24 @@
+- name: My first playbook
+  hosts: localhost
+  connection: local
+  tasks:
+
+   - name: Print Hello message
+     ansible.builtin.debug:
+       msg: Hello world
+
+   - name: Another Messsage
+     debug:
+       msg: Hello By Sonam Soni
+
+   - name: Create Simple File
+     copy:
+        dest: /mnt/d/tools/demo.txt
+        content: This file is created by ansible
+
+# run using this command
+# ansible-playbook first-playbook.yml 
+
+# ansible.builtin.debug and just debug both same
+# if file created you can see changed 1 in output
+# run the same command again where file exists then it will just give OK

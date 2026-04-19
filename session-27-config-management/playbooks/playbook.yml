@@ -1,0 +1,6 @@
+- name: Web Server Connect
+  hosts: server1
+
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
