@@ -16,3 +16,6 @@ cat ~/.ssh/sonamkey.pem
 # you can see key content
 ```
 
+# how inventory created
+
+![Inventory](images/inventory.png)
