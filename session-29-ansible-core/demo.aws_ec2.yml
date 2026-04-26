@@ -1,0 +1,20 @@
+plugin: amazon.aws.aws_ec2
+
+regions:
+- us-east-1
+
+# name your instance
+hostnames:
+  - name: private-ip-address
+    separator: '_'
+    prefix: 'aws'
+
+# group your instance
+keyed_groups:
+- key: placement.region
+  prefix: aws_region
+
+compose:
+  ansible_host: private_ip_address
+  ansible_user: '"ubuntu"'
+  ansible_ssh_private_key_file: '"~/.ssh/sonamkey.pem"'

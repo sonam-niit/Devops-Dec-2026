@@ -64,3 +64,32 @@ aws configure
 aws configure list
 aws sts get-caller-identity # you can see your aws account info
 ```
+
+## Create Dynamic Inventory
+
+[Reference Link](https://docs.ansible.com/projects/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html)
+
+- create very basic inventory to fetch all
+- create demo.aws_ec2.yml file
+- add below code
+
+```yml
+plugin: amazon.aws.aws_ec2
+
+regions:
+- us-east-1
+```
+
+- run below commands
+
+```bash
+ansible-inventory -i demo.aws_ec2.yml --graph
+# incase if you are getting any error run below command
+
+sudo apt install python3-boto3 -y
+sudo apt install python3-botocore -y
+
+#  then check again
+```
+
+![Output](images/output1.png)
