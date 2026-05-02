@@ -1,0 +1,18 @@
+---
+# tasks file for httpd
+- name: Install httpd
+  yum: 
+    name: "{{ package_name }}"
+    state: present
+
+- name: Deploy template
+  template: 
+    src: index.html.j2 # automatically search in template folder
+    dest: /var/www/html/index.html
+  notify: Apache Restart
+
+- name: Start httpd service
+  service:
+    name: "{{ package_name }}"
+    state: started
+    enabled: true

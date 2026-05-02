@@ -1,0 +1,5 @@
+---
+# defaults file for httpd
+
+app_name: My Apache app 
+env: Dev

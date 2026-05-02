@@ -1,0 +1,7 @@
+---
+- name: Demo for Roles
+  hosts: all
+  become: true
+
+  roles:
+    - httpd

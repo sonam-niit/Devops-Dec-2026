@@ -1,0 +1,27 @@
+---
+- name: create Server
+  hosts: server1
+  become: true
+  # gather_facts: no # this is by default yes only
+  vars:
+    package_name: httpd
+  tasks:
+    - name: Install packages
+      yum: 
+        name: "{{ package_name }}"
+    - name: install HTTPD on Ubuntu
+      apt: 
+        name: apache2
+        state: present
+      when: ansible_os_family == "ubuntu"
+      # ansible_os_family is fact
+    - name: Start Service
+      service:
+        name: "{{ package_name }}"
+        state: started
+        enabled: yes
+
+
+# checking facts
+# ansible all -m setup -i inventory.yml (to see all)
+# ansible all -m setup -i inventory.yml -a "filter=ansible_os_family" (to filter)

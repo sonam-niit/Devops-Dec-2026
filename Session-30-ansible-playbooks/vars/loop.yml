@@ -1,0 +1,32 @@
+- name: install packages
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Install Git and Curk
+      yum: #apt for ubuntu
+        name: "{{ item }}"
+        state: present # optional
+      loop:
+        - git 
+        - httpd #nginx for ubuntu
+
+    - name: Check Git Version
+      command: git --version
+      register: git_version
+
+    - name: Print Version
+      debug: 
+        msg: "Git Version {{ git_version.stdout }}" 
+    
+# write code to get Httpd status and print registered output
+
+    - name: Check httpd Status
+      command: systemctl status httpd
+      register: httpd_status
+
+    - name: Print Version
+      debug: 
+        msg: "{{ httpd_status.stdout }}" 
+    

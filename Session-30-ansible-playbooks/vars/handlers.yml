@@ -1,0 +1,29 @@
+---
+- name: create Server
+  hosts: server1
+  become: true
+  vars:
+    package_name: httpd
+  tasks:
+    - name: Install packages
+      yum: 
+        name: "{{ package_name }}"
+
+    - name: Start Service
+      service:
+        name: "{{ package_name }}"
+        state: started
+        enabled: yes
+    
+    - name: Copy index.html file 
+      copy: 
+        content: "<h1>Hello From Ansible</h1>"
+        dest: /var/www/html/index.html
+      notify: Restart Apache # calling handlers
+
+#  handlers will not trigger automatically
+  handlers:
+    - name: Restart Apache 
+      service:
+        name: httpd
+        state: restarted
