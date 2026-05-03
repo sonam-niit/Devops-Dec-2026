@@ -1,0 +1,4 @@
+---
+# defaults file for roles/frontend
+nginx_title: "Welcome to my Website"
+nginx_msg: "Deploying app using Role"

@@ -1,0 +1,7 @@
+---
+- name: FullStack Dev Project
+  hosts: all
+  become: true
+
+  roles:
+    - frontend

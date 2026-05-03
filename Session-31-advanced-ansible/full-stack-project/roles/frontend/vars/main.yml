@@ -1,0 +1,4 @@
+---
+# vars file for roles/frontend
+
+package_name: nginx
