@@ -7,8 +7,14 @@
     state: present
     update_cache: yes 
 
-- name: Copy Html file
-  copy:
-    src: index.html # search index.html here
+# - name: Copy Html file
+#   copy:
+#     src: index.html # search index.html here
+#     dest: /var/www/html/index.html
+#   notify: restart nginx
+
+- name: Copy Html Template
+  template:
+    src: index.html.j2 # search inside templates folder
     dest: /var/www/html/index.html
   notify: restart nginx
