@@ -1,0 +1,14 @@
+---
+- name: failed when condition demo
+  hosts: localhost
+  tasks:
+
+    - name: Run Command
+      shell: echo "hello"
+      register: output
+
+    - name: Fail if output contains hello
+      debug:
+        msg: "Checking Output"
+      failed_when: '"hello" in output.stdout'
+
