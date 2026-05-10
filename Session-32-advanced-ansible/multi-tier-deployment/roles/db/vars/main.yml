@@ -1,2 +1,5 @@
 ---
 # vars file for roles/db
+DB_USER: myappuser
+DB_PASS: mysecretpassword
+

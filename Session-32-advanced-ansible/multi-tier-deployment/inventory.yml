@@ -1,0 +1,20 @@
+all:
+  hosts:
+    server1:
+      ansible_host: ec2-98-82-33-181.compute-1.amazonaws.com
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ~/.ssh/pwskills.pem
+    server2:
+      ansible_host: ec2-98-82-33-181.compute-1.amazonaws.com
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ~/.ssh/pwskills.pem
+
+  children:
+  # groups created
+    db:
+      hosts:
+        server1:
+
+    app:
+      hosts:
+        server2:
