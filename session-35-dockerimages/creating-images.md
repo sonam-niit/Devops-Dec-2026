@@ -35,3 +35,39 @@ sudo docker logs nodeapp
 ```
 
 *If you are chnaging code of your project then build image again, stop old running container and start new container*
+
+## Push Image to Docker Hub
+
+1. Create Account on DockerHub
+2. once account is created open wsl
+
+- let's Login from WSL
+
+![Docker Login](images/docker-login.png)
+
+- open the coming in browser, enter device code, login with your credentials and you can see login success in terminal
+
+3. Let's Push image to docker hub
+
+- Tag image and then push
+
+```bash
+sudo docker tag mynodeapp:latest skillwithsonam/mynodeapp:v1
+# here skillwithsonam is my docker hub username
+# mynodeapp i want to give as repo name
+# v1 is the tag showing version1
+sudo docker push skillwithsonam/mynodeapp:v1
+# go to browser and refresh dockerhub page
+# check repositories
+```
+
+![Check Repo](images/repos.png)
+
+- you can add description categories
+- also add overview of your repository like md file
+
+![Repo Config](images/repo-config.png)
+
+- now if you see docker images you can see both local + docker hub
+
+![DockerImages](images/images.png)
