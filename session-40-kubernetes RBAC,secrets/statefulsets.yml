@@ -53,3 +53,10 @@ spec:
 #  kubectl get pods (you can see unique names like web-0)
 #  kubectl describe statefulsets web
 #  kubectl get pvc (you can see unique pvc for each pod)
+
+
+# kubectl delete service nginx
+# kubectl delete statefulsets web
+# kubectl delete pvc www-web-0
+# kubectl delete pvc www-web-1
+# kubectl delete pvc www-web-2
