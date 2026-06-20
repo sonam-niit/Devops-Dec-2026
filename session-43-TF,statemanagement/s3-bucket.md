@@ -73,3 +73,19 @@
 
 *This is accessible because we have already added the policy earlier*
 *If you are creating new bucket then you have to give policy to access website*
+
+## Create All the above steps using Terraform
+
+[Documentation for Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration)
+
+- create main.tf for resources
+- create variables.tf for variables
+- to pass prompt values dont give default value and run so it will prompt and you can  enter values
+- if you want to give dynamic values create terraform.tfvars file which will automatically detected by variables and take value from it.
+- to get output use outputs.tf file
+
+```bash
+terraform init
+terraform plan
+terraform apply --auto-approve
+```
