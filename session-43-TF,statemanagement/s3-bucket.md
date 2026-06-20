@@ -38,6 +38,10 @@
 *Here Action: what they can do like get object, put object*
 *Here Resource: On what resource, bucket-arn/* like this*
 
+- for Resource you can give bucket-arn/* (for all objects in same bucket)
+- for Resource you can give bucket-arn/folder/* (for perticular folder in bucket)
+- for Resource you can give bucket-arn/xyz.jpg (for single object in bucket)
+
 - click on create Policy So you can see JSON code generated.
 - now copy the policy and go to bucket
 - permission -> Policy -> edit - paste that JSON code -> save Changes
@@ -50,3 +54,22 @@
 - now open that onject and click on version tab you can see 2 versions of same object
 
 ![Versioning](images/versioning.png)
+
+## Deploy Static Website using S3 Bucket
+
+- create some HTML page like portfolio
+- save it with index.html
+- upload it in s3 bucket
+
+- now once upload done
+- s3 bucket - properties - scroll to last and you can see static website hosting.
+- click on edit and click on enable
+
+![Host Static Website](images/host-site.png)
+
+- you can see site hosted and endpoint given
+
+![Endpoint](images/endpoint.png)
+
+*This is accessible because we have already added the policy earlier*
+*If you are creating new bucket then you have to give policy to access website*
