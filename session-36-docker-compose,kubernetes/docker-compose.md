@@ -81,16 +81,16 @@ npm create vite@latest
 
 ```bash
 docker compose version
-docker compose up -d --build
+sudo docker compose up -d --build
 # you can see image build, network, volume creation, conatiners started
-docker logs mysql_container
-docker logs backend
-docker logs frontend
+sudo docker logs mysql_container
+sudo docker logs backend
+sudo docker logs frontend
 # also access in browser
 # http://localhost:3000/ (backend URL)
 # http://localhost:5173/ (Fronten URL)
 
-docker compose down
+sudo docker compose down
 # it will stop and remove all containers
 # also remove network
 ```

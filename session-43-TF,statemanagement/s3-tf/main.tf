@@ -29,6 +29,9 @@ resource "aws_s3_bucket_public_access_block" "example" {
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
   bucket = aws_s3_bucket.example.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account.json
+  depends_on = [ aws_s3_bucket_public_access_block.example ]
+#   just to add dependency so public access unblock done first
+#  and then attach policy to it
 }
 # this code will create Policy
 data "aws_iam_policy_document" "allow_access_from_another_account" {
