@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket = "remote-backend-terraform-demo"
+    key = "terraform.tfstate"
+    region = "us-east-1"
+    encrypt = true
+    # dynamodb_table = "mytable"
+    # for state locking while collab
+  }
+}
 provider "aws" {
   region = "us-east-1"
 }
@@ -63,3 +73,16 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 }
+
+# terraform init
+# terraform apply --auto-approve
+# check public ip in browser so you can see default HTTPD page
+
+#  Track State
+#  terraform state list
+
+# terraform state show aws_key_pair.example
+# terraform state show aws_security_group.web_sg
+# any resource name you can give to see full details
+
+# terraform destroy --auto-approve

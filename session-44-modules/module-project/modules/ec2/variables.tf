@@ -12,3 +12,9 @@ variable "instance_name" {
   type = string
   default = "linux-vm"
 }
+variable "sec_group_id" {
+  description = "Security Group ID coming from Module SG"
+}
+variable "key_name" {
+  description = "Key name coming from keypair module"
+}
