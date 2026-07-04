@@ -37,3 +37,62 @@
 - once attach done check instance and see storage
 
 ![Storage Details](images/attach.png)
+
+- Detach volume by refreshing the state
+
+## Backup of volume
+
+- create snapshot
+- select volume
+- add description
+- tag: add name - Name: backup volume
+- create (this is the backup of your volume)
+- this manual backup process
+
+## Automated Backup
+
+- best and recommened way for backup
+- AWS LM (LifeCycle Manager)
+
+- It will  create automatic backups, Retails and delete old EBS snapshots
+
+1. Go to AWS Console -> EC2 Dashboard -> EBS (Elastic block Store) -> LifeCycle manage 
+2. select default policy -> next
+3. give description , go for default role (It will create new role for taking backups of all volumes automatically)
+4. if you have existing choose that otherwise go for new creation only.
+5. Schedule Details -> creation (7 days) , retention (14 days)
+6. Exclude is Optional but you can choose if you want to skip backup of some boot volumes and any perticular volume backup.
+7. Advanced Settings you can se copy cross region for disaster recovery.
+8. policy tags: Give Name of the Policy:
+    Name: My Volume Backup
+
+9. This sam key value tags you use while creating instance and volumes so your lifecycle manager will search these resources based on given tag and start taking backups.
+10. then create Policy.
+
+*Default policy takes backup of all* 
+
+## Create Custom policy
+
+*Any volume which is having tag named Backup and value is true which is automatically backeup using this policy*
+
+![Custome policy](images/custom1.png)
+
+![Custom Policy](images/custom2.png)
+
+- Policy Status: Enabled
+
+![Custom Policy](images/custom3.png)
+
+## Backup using S3 Bucket
+
+- create S3 bucket
+- enable versioning for quick backup
+- means if new file deleted we can get only from versioning
+
+- bucket -> Management -> Lifecycle rules -> create rule to keep limited version of  files means keep only 3 latest versions and delete the older ones.
+
+*Another way for backup is creating replication rule*
+
+*practice Task to explore for Backups*
+
+### Task: Explore Automated Backups in RDS (Relational DB Service)
