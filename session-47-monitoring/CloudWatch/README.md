@@ -75,5 +75,12 @@ stress --cpu 2 --timeout 300
 
 - Check your email, you must have received Email for Alarm Triggered.
 
-- again go to VM shell and stop the command execution
+- again go to VM shell and stop the command execution (ctrl+C)
 - again check Cloudwatch Alarm will be in OK state.
+
+![OK State](images/step14.png)
+
+- once Completed Make sure to delete all resources.
+- EC2 instance
+- Alarm in Cloudwatch
+- SNS topic in SNS Service
