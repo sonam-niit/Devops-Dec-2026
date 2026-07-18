@@ -48,3 +48,22 @@ lsblk
 sudo umount /dev/sdf
 lablk # verify unmounted or not
 ```
+
+### Practice Task
+
+- Create Snapshot (Backup)
+- select your volume (extra storage)
+- give description
+- tag: Name: backup_extra_volume
+
+## Restore Volume from Backup
+
+- Instance Deleted and now you cretaed new instance and you want this volume as backup.
+- create volume, select snapshot
+- give details created
+- attach this volume to instance.
+
+## Detach and Delet Volume
+
+- select volume, action -> Detach -> refresh
+- select volume action -> delete
