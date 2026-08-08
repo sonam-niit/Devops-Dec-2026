@@ -2,11 +2,17 @@ import boto3
 import json
 import time
 
-# Create SQS client
-sqs = boto3.client('sqs')
+REGION = "us-east-1"
+QUEUE_NAME = "order-queue"
 
-# queue_url = 'SQS_QUEUE_URL'
-queue_url = 'https://sqs.us-east-1.amazonaws.com/277707128105/order-queue'
+sqs = boto3.client(
+    "sqs",
+    region_name=REGION
+)
+
+queue_url = sqs.get_queue_url(
+    QueueName=QUEUE_NAME
+)["QueueUrl"]
 
 while True:
     messages = sqs.receive_message(
