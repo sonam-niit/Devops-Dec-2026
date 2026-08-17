@@ -117,3 +117,15 @@
 3. What is values.yaml?
 4. Difference between Helm install and upgrade?
 5. How do you rollback a Helm release?
+
+## Advanced
+
+### CI/CD
+
+1. How do you deploy applications to Kubernetes using Jenkins?
+2. How do you deploy applications using GitHub Actions?
+3. What is GitOps?
+4. What is Argo CD?
+5. What is Flux CD?
+6. How do you perform Blue-Green Deployment?
+7. How do you perform Canary Deployment?
