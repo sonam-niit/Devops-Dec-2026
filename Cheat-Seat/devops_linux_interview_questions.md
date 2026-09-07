@@ -119,13 +119,24 @@
 
 1. A server is slow. How will you troubleshoot performance issues?
 2. Disk is full on a production server. What steps will you take?
+```bash
+df -h
+du -sh /*
+du -sh /var/*
+
+# Large files
+find /var -type f -size +500M -ls
+
+# Check Logs
+du -sh /var/log/*
+```
 3. CPU usage is constantly 100 percent. How will you find the root cause?
 4. A process is stuck and not responding. What will you do?
 5. A service is not starting after reboot. How will you debug?
 6. You cannot SSH into a server. What checks will you perform?
 7. A cron job is not running. How will you troubleshoot?
 8. Application cannot write to a directory. What will you verify?
-9. A port is not accessible from outside. How will you debug?
+9.  A port is not accessible from outside. How will you debug?
 10. Logs are growing very fast. What can you do?
 11. A file was deleted accidentally but process is still running. Can you recover it?
 12. System is running out of memory. What steps will you take?
